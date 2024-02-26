@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>KsWare.Data.SQLitePCL</AssemblyName>
+    <PackageId>KsWare.Data.SQLitePCL-base</PackageId>
+    <AssemblyTitle>KsWare.Data.SQLitePCL .NET Standard Base Library</AssemblyTitle>
+    <Description>
+      This is a special version of KsWare.Data.SQLitePCL that does not include a SQLitePCLRaw bundle.
+      It is meant to give you all the power of KsWare.Data.SQLitePCL but with the freedom to choose your own provider.
+      Please use the package KsWare.Data.SQLitePCL if you have no idea what any of this means.
+    </Description>
+
+   
+    <Configurations>Release;Debug</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType></DebugType>
+    <DefineConstants>USE_SQLITEPCL_RAW;NO_SQLITEPCL_RAW_BATTERIES;RELEASE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Release\netstandard2.0\SQLite-net.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>USE_SQLITEPCL_RAW;NO_SQLITEPCL_RAW_BATTERIES;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\netstandard2.0\SQLite-net.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SQLitePCLRaw.core" Version="2.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\SQLite.cs">
+      <Link>SQLite.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\SQLiteAsync.cs">
+      <Link>SQLiteAsync.cs</Link>
+    </Compile>
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
