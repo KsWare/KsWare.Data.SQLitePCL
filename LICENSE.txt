@@ -1,4 +1,4 @@
-Copyright (c) Krueger Systems, Inc.
+Copyright (c) KsWare
 
 All rights reserved.
 

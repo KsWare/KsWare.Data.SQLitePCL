@@ -13,13 +13,11 @@ using TestFixture = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestCl
 using Test = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestMethodAttribute;
 #else
 using NUnit.Framework;
-// ReSharper disable AsyncApostle.AsyncWait
 #endif
+// ReSharper disable AsyncApostle.AsyncWait
 
 namespace SQLite.Tests
 {
-
-
 
 	// @mbrit - 2012-05-14 - NOTE - the lack of async use in this class is because the VS11 test runner falsely
 	// reports any failing test as succeeding if marked as async. Should be fixed in the "June 2012" drop...
